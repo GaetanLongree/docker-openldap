@@ -1,0 +1,42 @@
+version: 1
+
+# create groups OU
+
+dn: ou=groups,dc=iglu,dc=lu
+objectclass: organizationalunit
+ou: groups
+description: groups ou
+
+# create users OU
+
+dn: ou=users,dc=iglu,dc=lu
+objectclass: organizationalunit
+ou: users
+description: users ou
+
+# create the administrators group
+
+dn: cn=administrators,ou=groups,dc=iglu,dc=lu
+objectclass: posixGroup
+objectclass: top
+cn: administrators
+description: administrators group
+gidNumber: 600
+
+# create the users group
+
+dn: cn=users,ou=groups,dc=iglu,dc=lu
+objectclass: posixGroup
+objectclass: top
+cn: users
+description: users group
+gidNumber: 601
+
+# create the externals group
+
+dn: cn=externals,ou=groups,dc=iglu,dc=lu
+objectclass: posixGroup
+objectclass: top
+cn: externals
+description: externals group
+gidNumber: 602
